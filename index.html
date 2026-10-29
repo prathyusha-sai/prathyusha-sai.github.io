@@ -21,6 +21,7 @@
       radial-gradient(700px 350px at 85% 20%,rgba(90,169,255,.10),transparent 60%);
     pointer-events:none}
   .kicker{color:var(--acc);letter-spacing:3px;font-size:12px;text-transform:uppercase;margin-bottom:18px}
+  .profile-photo{width:160px;height:160px;object-fit:cover;object-position:center 20%;border-radius:50%;border:2px solid var(--acc);margin-bottom:22px;display:block}
   h1{font-size:clamp(38px,6vw,60px);line-height:1.08;font-weight:700;letter-spacing:-1px}
   h1 span{color:var(--acc)}
   .tag{color:var(--mut);font-size:18px;margin-top:16px;max-width:660px}
@@ -62,6 +63,7 @@
 
 <header class="hero">
   <div class="wrap">
+    <img class="profile-photo" src="profile.png" alt="Sai Prathyusha Illendula">
     <div class="kicker">Cybersecurity Analyst · SOC · Incident Response · Threat Detection</div>
     <h1>Sai Prathyusha<br><span>Illendula</span></h1>
     <p class="tag">I triage alerts, investigate incidents, and hunt threats across Microsoft Sentinel and Splunk — turning noisy SOC queues into clear, documented decisions. M.S. Cybersecurity, University of Houston.</p>
@@ -69,6 +71,7 @@
       <div class="stat"><b>25%</b>fewer false positives via detection tuning</div>
       <div class="stat"><b>3.9</b>GPA, M.S. Cybersecurity</div>
       <div class="stat"><b>SC-200</b>Microsoft certified</div>
+      <div class="stat"><b>Security+</b>CompTIA certified</div>
       <div class="stat"><b>24×7</b>shift-ready SOC analyst</div>
     </div>
     <div class="cta-row">
@@ -141,12 +144,20 @@
       <span class="pill hot">Python</span><span class="pill hot">Random Forest</span><span class="pill hot">LIME / XAI</span><span class="pill hot">CICIDS 2017</span>
     </div>
   </div>
+  <div class="card feat" style="margin-top:14px">
+    <h3>SOC Security Monitoring Dashboard</h3>
+    <p style="margin-top:12px">Built a SOC monitoring dashboard over 200 simulated security events, with detection rules flagging brute-force attempts, repeated failed logins, and account lockouts — mapped to MITRE ATT&amp;CK T1110 (Brute Force). Built to show how a SOC analyst spots, triages, and escalates real attack patterns, not just raw alerts.</p>
+    <div style="margin-top:14px">
+      <span class="pill hot">Python</span><span class="pill hot">Streamlit</span><span class="pill hot">Pandas</span><span class="pill hot">Plotly</span>
+    </div>
+    <p style="margin-top:14px"><a href="https://github.com/prathyusha-sai/SOC-Security-Monitoring-Dashboard" target="_blank" rel="noopener">GitHub</a> · <a href="https://soc-security-monitoring-dashboard.streamlit.app" target="_blank" rel="noopener">Live app</a></p>
+  </div>
 </section>
 
 <section>
   <h2>Credentials<span class="dot">.</span></h2>
   <div class="grid g2">
-    <div class="card"><h3>Certification</h3><p><strong style="color:var(--txt)">Microsoft Certified: Security Operations Analyst Associate (SC-200)</strong></p></div>
+    <div class="card"><h3>Certifications</h3><p><strong style="color:var(--txt)">Microsoft Certified: Security Operations Analyst Associate (SC-200)</strong></p><p><strong style="color:var(--txt)">CompTIA Security+ (SY0-701)</strong> — issued Oct 2026</p></div>
     <div class="card"><h3>Education</h3><p><strong style="color:var(--txt)">M.S. Cybersecurity</strong> — University of Houston, 2026 · GPA 3.9<br><strong style="color:var(--txt)">B.Tech Computer Science</strong> — Institute of Aeronautical Engineering, 2021</p></div>
   </div>
 </section>
