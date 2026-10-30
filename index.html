@@ -4,106 +4,133 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sai Prathyusha Illendula — Cybersecurity Analyst</title>
+<meta name="description" content="SC-200 & Security+ Certified Cybersecurity Analyst. Microsoft Sentinel, Splunk, KQL. SOC monitoring, incident response and threat detection.">
 <style>
-  :root{
-    --bg:#0a0f1a; --bg2:#0e1526; --card:#111a2e; --line:#1e2a44;
-    --txt:#e8edf7; --mut:#93a1bd; --acc:#38e1c6; --acc2:#5aa9ff;
+  :root {
+    --bg: #0b1220;
+    --card: #111c33;
+    --card-2: #16233f;
+    --text: #e8eefc;
+    --muted: #aebbd8;
+    --accent: #38d6a5;
+    --accent-2: #5aa2ff;
+    --border: #24365e;
   }
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{background:var(--bg);color:var(--txt);
-    font-family:"Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;
-    line-height:1.65;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:960px;margin:0 auto;padding:0 24px}
-  header.hero{padding:100px 0 64px;position:relative;overflow:hidden}
-  header.hero::before{content:"";position:absolute;inset:0;
-    background:
-      radial-gradient(600px 300px at 15% 10%,rgba(56,225,198,.08),transparent 60%),
-      radial-gradient(700px 350px at 85% 20%,rgba(90,169,255,.10),transparent 60%);
-    pointer-events:none}
-  .kicker{color:var(--acc);letter-spacing:3px;font-size:12px;text-transform:uppercase;margin-bottom:18px}
-  .profile-photo{width:260px;height:320px;object-fit:cover;object-position:center 20%;border-radius:16px;border:2px solid var(--line);flex-shrink:0}
-  .hero-inner{display:flex;gap:36px;align-items:center}
-  @media(max-width:700px){.hero-inner{flex-direction:column;align-items:flex-start}.profile-photo{width:200px;height:240px}}
-  h1{font-size:clamp(38px,6vw,60px);line-height:1.08;font-weight:700;letter-spacing:-1px}
-  h1 span{color:var(--acc)}
-  .tag{color:var(--mut);font-size:18px;margin-top:16px;max-width:660px}
-  .stats{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
-  .stat{background:var(--card);border:1px solid var(--line);border-radius:10px;
-    padding:12px 18px;font-size:14px}
-  .stat b{display:block;font-size:20px;color:var(--acc)}
-  .cta-row{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap}
-  .btn{display:inline-block;padding:12px 26px;border-radius:8px;text-decoration:none;font-weight:600;font-size:15px}
-  .btn-p{background:var(--acc);color:#06131a}
-  .btn-g{border:1px solid var(--line);color:var(--txt)}
-  section{padding:56px 0;border-top:1px solid var(--line)}
-  h2{font-size:26px;margin-bottom:8px;letter-spacing:-.5px}
-  h2 .dot{color:var(--acc)}
-  .sub{color:var(--mut);margin-bottom:28px;font-size:15px}
-  .grid{display:grid;gap:18px}
-  .g2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-  .g3{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px}
-  .card h3{font-size:17px;margin-bottom:10px}
-  .card p,.card li{color:var(--mut);font-size:14.5px}
-  .card ul{list-style:none}
-  .card li{padding:6px 0 6px 22px;position:relative}
-  .card li::before{content:"▸";color:var(--acc);position:absolute;left:0}
-  .feat{border:1px solid rgba(56,225,198,.35);background:linear-gradient(180deg,rgba(56,225,198,.06),transparent)}
-  .feat h3{font-size:20px}
-  .pill{display:inline-block;font-size:12px;padding:4px 12px;border-radius:20px;
-    border:1px solid var(--line);color:var(--mut);margin:4px 6px 0 0}
-  .pill.hot{border-color:rgba(56,225,198,.5);color:var(--acc)}
-  .role{font-weight:600}
-  .when{color:var(--acc);font-size:13px;letter-spacing:1px;text-transform:uppercase}
-  .hl-num{font-size:34px;font-weight:700;color:var(--acc);line-height:1.1}
-  footer{padding:60px 0 80px;border-top:1px solid var(--line);text-align:center;color:var(--mut)}
-  footer a{color:var(--acc);text-decoration:none}
-  @media(max-width:600px){header.hero{padding:70px 0 50px}}
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  a { color: var(--accent-2); }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 20px 64px; }
+  header { padding: 64px 0 32px; border-bottom: 1px solid var(--border); }
+  .profile-photo { width: 150px; height: 150px; object-fit: cover; border-radius: 50%; border: 3px solid var(--accent); display: block; margin-bottom: 20px; }
+  header h1 { font-size: 2.4rem; line-height: 1.15; margin: 0 0 12px; }
+  .headline { font-size: 1.15rem; color: var(--text); margin: 0 0 12px; }
+  .availability { color: var(--muted); margin: 0 0 24px; }
+  .buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 999px;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .btn.primary { background: var(--accent); color: #06281d; }
+  .btn:hover { opacity: 0.9; }
+  section { padding: 36px 0 8px; }
+  h2 { font-size: 1.6rem; margin: 0 0 6px; }
+  .section-intro { color: var(--muted); margin: 0 0 20px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px;
+  }
+  .card h3 { margin-top: 0; }
+  .card p { color: var(--muted); }
+  .job { margin-bottom: 28px; }
+  .job .dates { color: var(--muted); margin: 0; }
+  .job h3 { margin: 4px 0 10px; font-size: 1.25rem; }
+  .job ul { margin: 0; padding-left: 20px; color: var(--muted); }
+  .job li { margin-bottom: 6px; }
+  .job li strong { color: var(--text); }
+  .tag {
+    display: inline-block;
+    background: var(--card-2);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 3px 10px;
+    margin: 0 6px 8px 0;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+  .project-links { margin-top: 14px; }
+  .project-links a { margin-right: 16px; }
+  footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); }
+  @media (max-width: 600px) {
+    header { padding-top: 40px; }
+    header h1 { font-size: 1.9rem; }
+  }
 </style>
 </head>
 <body>
-
-<header class="hero">
-  <div class="wrap hero-inner">
-    <div>
-    <div class="kicker">Cybersecurity Analyst · SOC · Incident Response · Threat Detection</div>
-    <h1>Sai Prathyusha<br><span>Illendula</span></h1>
-    <p class="tag">I triage alerts, investigate incidents, and hunt threats across Microsoft Sentinel and Splunk — turning noisy SOC queues into clear, documented decisions. M.S. Cybersecurity, University of Houston.</p>
-    <div class="stats">
-      <div class="stat"><b>25%</b>fewer false positives via detection tuning</div>
-      <div class="stat"><b>3.9</b>GPA, M.S. Cybersecurity</div>
-      <div class="stat"><b>SC-200</b>Microsoft certified</div>
-      <div class="stat"><b>Security+</b>CompTIA certified</div>
-      <div class="stat"><b>24×7</b>shift-ready SOC analyst</div>
-    </div>
-    <div class="cta-row">
-      <a class="btn btn-p" href="mailto:saiprathyusha.illendula27@gmail.com">Get in touch</a>
-      <a class="btn btn-g" href="https://www.linkedin.com/in/sai-prathyusha-illendula/" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-    </div>
-    <img class="profile-photo" src="profile.png" alt="Sai Prathyusha Illendula">
-  </div>
-</header>
-
 <div class="wrap">
 
-<section>
-  <h2>What I bring<span class="dot">.</span></h2>
-  <p class="sub">The three things a SOC hiring manager is screening for.</p>
-  <div class="grid g3">
-    <div class="card"><div class="hl-num">01</div><h3 style="margin-top:10px">Triage under pressure</h3><p>High-volume alert queues triaged with MITRE ATT&amp;CK and Kill Chain analysis — real threats found, noise escalated correctly, nothing dropped.</p></div>
-    <div class="card"><div class="hl-num">02</div><h3 style="margin-top:10px">Detections that explain themselves</h3><p>From KQL hunting queries to an explainable-AI intrusion detector — I build and tune detections a reviewer can understand and trust.</p></div>
-    <div class="card"><div class="hl-num">03</div><h3 style="margin-top:10px">Documentation that holds up</h3><p>Clear findings, clean escalation summaries, honest dashboards. The incident report is part of the response, not an afterthought.</p></div>
-  </div>
-</section>
+  <!-- Hero / top section -->
+  <header>
+    <img class="profile-photo" src="profile.png" alt="Photo of Sai Prathyusha Illendula">
+    <h1>Sai Prathyusha Illendula</h1>
+    <p class="headline">
+      SC-200 &amp; Security+ Certified Cybersecurity Analyst |
+      Microsoft Sentinel &bull; Splunk &bull; KQL |
+      SOC Monitoring, Incident Response &amp; Threat Detection |
+      M.S. Cybersecurity
+    </p>
+    <p class="availability">
+      Houston, TX &mdash; Open to SOC Analyst roles across the United States:
+      remote, hybrid, and on-site. Open to 24x7 SOC shift work.
+    </p>
+    <div class="buttons">
+      <a class="btn" href="https://www.linkedin.com/in/sai-prathyusha-illendula/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a class="btn" href="https://github.com/prathyusha-sai" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
+  </header>
 
-<section>
-  <h2>Experience<span class="dot">.</span></h2>
-  <p class="sub">Where I've done the work.</p>
-  <div class="grid g2">
-    <div class="card">
-      <div class="when">Nov 2025 – Jan 2026</div>
-      <h3><span class="role">Cyber Security Analyst</span> — Excelerate</h3>
+  <!-- What I bring -->
+  <section>
+    <h2>What I bring.</h2>
+    <p class="section-intro">The three things a SOC hiring manager is screening for.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>01 &mdash; Triage under pressure</h3>
+        <p>High-volume alert queues triaged with MITRE ATT&amp;CK and Kill Chain analysis &mdash; real threats found, noise escalated correctly, nothing dropped.</p>
+      </div>
+      <div class="card">
+        <h3>02 &mdash; Detections that explain themselves</h3>
+        <p>From KQL hunting queries to an explainable-AI intrusion detector &mdash; I build and tune detections a reviewer can understand and trust.</p>
+      </div>
+      <div class="card">
+        <h3>03 &mdash; Documentation that holds up</h3>
+        <p>Clear findings, clean escalation summaries, honest dashboards. The incident report is part of the response, not an afterthought.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section>
+    <h2>Experience.</h2>
+    <p class="section-intro">Where I've done the work.</p>
+
+    <div class="job">
+      <p class="dates">Nov 2025 &ndash; Jan 2026 &middot; Remote</p>
+      <h3>Cyber Security Analyst (Internship, Lab SOC) &mdash; Excelerate</h3>
       <ul>
         <li>Investigated incidents in Splunk SIEM, correlating auth logs with network indicators to determine scope and impact</li>
         <li>Cut false-positive alerts 25% through correlation-rule tuning and evidence-based validation</li>
@@ -111,9 +138,10 @@
         <li>Screened phishing emails; hardened Linux endpoints with default-deny firewall rules</li>
       </ul>
     </div>
-    <div class="card">
-      <div class="when">Jul 2021 – Apr 2023</div>
-      <h3><span class="role">Software Engineer</span> — Hexaware Technologies</h3>
+
+    <div class="job">
+      <p class="dates">Jul 2021 &ndash; Apr 2023 &middot; Remote</p>
+      <h3>Software Engineer &mdash; Hexaware Technologies</h3>
       <ul>
         <li>Traced anomalous behavior in application and system logs; documented findings</li>
         <li>Validated access controls, user permissions, and input handling in security-focused testing</li>
@@ -121,59 +149,99 @@
         <li>Screened suspicious emails for phishing indicators (spoofed senders, malicious links/attachments)</li>
       </ul>
     </div>
-  </div>
-</section>
+  </section>
 
-<section>
-  <h2>Skills<span class="dot">.</span></h2>
-  <p class="sub">The toolkit I reach for daily.</p>
-  <div class="grid g3">
-    <div class="card"><h3>SIEM &amp; Detection</h3><p>Microsoft Sentinel · Splunk · KQL · Wazuh · Suricata · OSSEC</p></div>
-    <div class="card"><h3>Incident Response</h3><p>Alert triage · Investigation · Containment · Escalation · MITRE ATT&amp;CK</p></div>
-    <div class="card"><h3>Vulnerability Mgmt</h3><p>Nessus · Nmap · Finding validation · Remediation tracking</p></div>
-    <div class="card"><h3>Network Security</h3><p>Wireshark · tcpdump · TCP/IP · DNS · Firewalls · VPN</p></div>
-    <div class="card"><h3>Scripting</h3><p>Python · Bash · PowerShell · SQL</p></div>
-    <div class="card"><h3>Frameworks</h3><p>NIST CSF · CIS Controls · ISO 27001 · OWASP Top 10</p></div>
-  </div>
-</section>
-
-<section>
-  <h2>Featured Project<span class="dot">.</span></h2>
-  <p class="sub">Research with real detection value.</p>
-  <div class="card feat">
-    <h3>Real-Time Intrusion Detection with Explainable AI</h3>
-    <p><em>Master's project · University of Houston</em></p>
-    <p style="margin-top:12px">Built an IDS using Random Forest on the CICIDS 2017 dataset — covering DDoS, botnet, brute-force, and web attacks — and applied LIME so every detection decision comes with a plain-language explanation. Detection you can't explain is detection you can't trust in a SOC.</p>
-    <div style="margin-top:14px">
-      <span class="pill hot">Python</span><span class="pill hot">Random Forest</span><span class="pill hot">LIME / XAI</span><span class="pill hot">CICIDS 2017</span>
+  <!-- Skills -->
+  <section>
+    <h2>Skills.</h2>
+    <p class="section-intro">The toolkit I reach for daily.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>SIEM &amp; Detection</h3>
+        <p>Microsoft Sentinel &middot; Splunk &middot; KQL &middot; Wazuh &middot; Suricata &middot; OSSEC</p>
+      </div>
+      <div class="card">
+        <h3>Incident Response</h3>
+        <p>Alert triage &middot; Investigation &middot; Containment &middot; Escalation &middot; MITRE ATT&amp;CK</p>
+      </div>
+      <div class="card">
+        <h3>Vulnerability Mgmt</h3>
+        <p>Nessus &middot; Nmap &middot; Finding validation &middot; Remediation tracking</p>
+      </div>
+      <div class="card">
+        <h3>Network Security</h3>
+        <p>Wireshark &middot; tcpdump &middot; TCP/IP &middot; DNS &middot; Firewalls &middot; VPN</p>
+      </div>
+      <div class="card">
+        <h3>Scripting</h3>
+        <p>Python &middot; Bash &middot; PowerShell &middot; SQL</p>
+      </div>
+      <div class="card">
+        <h3>Frameworks</h3>
+        <p>NIST CSF &middot; CIS Controls &middot; ISO 27001 &middot; OWASP Top 10</p>
+      </div>
     </div>
-  </div>
-  <div class="card feat" style="margin-top:14px">
-    <h3>SOC Security Monitoring Dashboard</h3>
-    <p style="margin-top:12px">Built a SOC monitoring dashboard over 200 simulated security events, with detection rules flagging brute-force attempts, repeated failed logins, and account lockouts — mapped to MITRE ATT&amp;CK T1110 (Brute Force). Built to show how a SOC analyst spots, triages, and escalates real attack patterns, not just raw alerts.</p>
-    <div style="margin-top:14px">
-      <span class="pill hot">Python</span><span class="pill hot">Streamlit</span><span class="pill hot">Pandas</span><span class="pill hot">Plotly</span>
-    </div>
-    <p style="margin-top:14px"><a href="https://github.com/prathyusha-sai/SOC-Security-Monitoring-Dashboard" target="_blank" rel="noopener">GitHub</a> · <a href="https://soc-security-monitoring-dashboard.streamlit.app" target="_blank" rel="noopener">Live app</a></p>
-  </div>
-</section>
+  </section>
 
-<section>
-  <h2>Credentials<span class="dot">.</span></h2>
-  <div class="grid g2">
-    <div class="card"><h3>Certifications</h3><p><strong style="color:var(--txt)">Microsoft Certified: Security Operations Analyst Associate (SC-200)</strong></p><p><strong style="color:var(--txt)">CompTIA Security+ (SY0-701)</strong> — issued Oct 2026</p></div>
-    <div class="card"><h3>Education</h3><p><strong style="color:var(--txt)">M.S. Cybersecurity</strong> — University of Houston, 2026 · GPA 3.9<br><strong style="color:var(--txt)">B.Tech Computer Science</strong> — Institute of Aeronautical Engineering, 2021</p></div>
-  </div>
-</section>
+  <!-- Featured projects -->
+  <section>
+    <h2>Featured Projects.</h2>
+    <p class="section-intro">Research with real detection value.</p>
+
+    <div class="card" style="margin-bottom: 16px;">
+      <h3>Real-Time Intrusion Detection with Explainable AI</h3>
+      <p><em>Master's project &middot; University of Houston</em></p>
+      <p>Built an IDS using Random Forest on the CICIDS 2017 dataset &mdash; covering DDoS, botnet, brute-force, and web attacks &mdash; and applied LIME so every detection decision comes with a plain-language explanation. Detection you can't explain is detection you can't trust in a SOC.</p>
+      <p>
+        <span class="tag">Python</span>
+        <span class="tag">Random Forest</span>
+        <span class="tag">LIME / XAI</span>
+        <span class="tag">CICIDS 2017</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>SOC Security Monitoring Dashboard</h3>
+      <p>Built a SOC monitoring dashboard over 200 simulated security events, with detection rules flagging brute-force attempts, repeated failed logins, and account lockouts &mdash; mapped to MITRE ATT&amp;CK T1110 (Brute Force). Built to show how a SOC analyst spots, triages, and escalates real attack patterns, not just raw alerts.</p>
+      <p>Simulated dataset: 200 events &mdash; 102 successful logins, 66 failed logins, 13 alerts (1 high, 3 medium, 9 low).</p>
+      <p>
+        <span class="tag">Python</span>
+        <span class="tag">Streamlit</span>
+        <span class="tag">Pandas</span>
+        <span class="tag">Plotly</span>
+      </p>
+      <p class="project-links">
+        <a href="https://github.com/prathyusha-sai/SOC-Security-Monitoring-Dashboard" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://soc-security-monitoring-dashboard.streamlit.app" target="_blank" rel="noopener noreferrer">Live app</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Credentials -->
+  <section>
+    <h2>Credentials.</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Certifications</h3>
+        <p><strong>Microsoft Certified: Security Operations Analyst Associate (SC-200)</strong></p>
+        <p><strong>CompTIA Security+ (SY0-701)</strong> &mdash; issued Oct 2026</p>
+      </div>
+      <div class="card">
+        <h3>Education</h3>
+        <p><strong>M.S. Cybersecurity</strong> &mdash; University of Houston, 2026 &middot; GPA 3.9</p>
+        <p><strong>B.Tech Computer Science</strong> &mdash; Institute of Aeronautical Engineering, 2021</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>
+      Sai Prathyusha Illendula &middot; Houston, TX &middot;
+      <a href="https://www.linkedin.com/in/sai-prathyusha-illendula/" target="_blank" rel="noopener noreferrer">LinkedIn</a> &middot;
+      <a href="https://github.com/prathyusha-sai" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </p>
+  </footer>
 
 </div>
-
-<footer>
-  <div class="wrap">
-    <p>Open to SOC analyst roles.</p>
-    <p style="margin-top:10px"><a href="mailto:saiprathyusha.illendula27@gmail.com">saiprathyusha.illendula27@gmail.com</a> · <a href="https://www.linkedin.com/in/sai-prathyusha-illendula/" target="_blank" rel="noopener">LinkedIn</a></p>
-  </div>
-</footer>
-
 </body>
 </html>
